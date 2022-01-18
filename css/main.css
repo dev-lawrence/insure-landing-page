@@ -1,1 +1,105 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  line-height: 1.6;
+  width: 100%;
+}
+
+a,
+span {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+
+.header .content {
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.header .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  width: 95px;
+}
+
+.toggle-menu {
+  background: url(../images/icon-hamburger.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 27px;
+  width: 27px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #2b272f;
+  height: 100%;
+  width: 100%;
+}
+
+.nav__bg {
+  position: absolute;
+  background-image: url(../images/bg-pattern-mobile-nav.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 8rem;
+  width: 100%;
+  height: 100%;
+}
+
+.nav__menu {
+  margin-top: 3rem;
+}
+
+.nav__menu li {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav__menu a {
+  color: #fff;
+}

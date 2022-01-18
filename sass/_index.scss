@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+@import '../sass/mixins';
+
+// CORE STYLES
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
 // FONTS
 $pry-font: 'DM Serif Display', serif;
 $sec-font: 'Karla', sans-serif;
+
+// BASE COLORS
+$white: #fff;
+$black: #000;
 
 // PRIMARY COLORS
 $darkViolet: hsl(256, 26%, 20%);
@@ -12,3 +27,99 @@ $grayishBlue: hsl(216, 30%, 68%);
 $veryDarkViolet: hsl(270, 9%, 17%);
 $darkGrayishViolet: hsl(273, 4%, 51%);
 $veryLightGray: hsl(0, 0%, 98%);
+
+body {
+  font-family: $sec-font;
+  line-height: 1.6;
+  width: 100%;
+}
+
+a,
+span {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+// HEADER SECTION
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: $white;
+
+  .content {
+    padding: 1.5rem 0;
+    position: relative;
+  }
+
+  .d-flex {
+    @include flex(space-between, center);
+  }
+
+  .logo {
+    width: 95px;
+  }
+}
+
+// TOOGLE MENU
+.toggle-menu {
+  background: url(../images/icon-hamburger.svg);
+  // @include bgStyles();
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 27px;
+  width: 27px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+// NAV SECTION
+.nav {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  @include flex(center, flex-start);
+  background-color: $veryDarkViolet;
+  height: 100%;
+  width: 100%;
+
+  &__bg {
+    position: absolute;
+    background-image: url(../images/bg-pattern-mobile-nav.svg);
+    // @include bgStyles();
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 8rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__menu {
+    margin-top: 3rem;
+    li {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+}
