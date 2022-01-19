@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+html {
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -12,6 +16,8 @@ body {
   font-family: "Karla", sans-serif;
   line-height: 1.6;
   width: 100%;
+  height: 100%;
+  background-color: #fafafa;
 }
 
 a,
@@ -30,13 +36,26 @@ img {
   height: auto;
 }
 
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
 .container {
   padding: 0 1rem;
+}
+
+.btn {
+  border: 1.5px solid #fff;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .header {
   position: fixed;
   width: 100%;
+  z-index: 999;
   background-color: #fff;
 }
 
@@ -76,21 +95,28 @@ img {
   background-color: #2b272f;
   height: 100%;
   width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
 }
 
 .nav__bg {
   position: absolute;
   background-image: url(../images/bg-pattern-mobile-nav.svg);
-  background-position: center;
+  background-position: bottom center;
   background-size: contain;
   background-repeat: no-repeat;
-  top: 8rem;
+  top: -4rem;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 
 .nav__menu {
+  display: block;
+  width: 100%;
   margin-top: 3rem;
+  z-index: 10;
 }
 
 .nav__menu li {
@@ -102,4 +128,120 @@ img {
 
 .nav__menu a {
   color: #fff;
+}
+
+.nav__menu .cta {
+  width: 90%;
+  padding: 0.5rem 2rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav__menu .cta:hover {
+  background-color: #000;
+  border-color: transparent;
+}
+
+.nav.showHeight {
+  max-height: 100%;
+}
+
+.toggle-menu.active {
+  background: url(../images/icon-close.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 27px;
+  width: 27px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#hero-section {
+  padding-top: 5rem;
+  width: 100%;
+}
+
+#hero-section .content {
+  color: #fafafa;
+  background-color: #2d2640;
+  display: flex;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+}
+
+#hero-section .hero-img {
+  background: url(../images/image-intro-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+#hero-section .title {
+  position: relative;
+  padding: 4rem 1rem;
+  text-align: center;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 60vh;
+  z-index: 10;
+}
+
+#hero-section .title h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+#hero-section .title p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+#hero-section .title__btn {
+  color: #fafafa;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#hero-section .title__btn:hover {
+  background-color: #fafafa;
+  color: #000;
+}
+
+#hero-section .title .top-left--bg {
+  background: url(../images/bg-pattern-intro-left-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  height: 200px;
+  width: 200px;
+}
+
+#hero-section .title .bottom-right--bg {
+  background: url(../images/bg-pattern-intro-right-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  position: absolute;
+  bottom: -10rem;
+  right: 0;
+  height: 300px;
+  width: 300px;
+  z-index: -1;
 }

@@ -2,6 +2,10 @@
 @import '../sass/mixins';
 
 // CORE STYLES
+html {
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -32,6 +36,8 @@ body {
   font-family: $sec-font;
   line-height: 1.6;
   width: 100%;
+  height: 100%;
+  background-color: $veryLightGray;
 }
 
 a,
@@ -50,14 +56,27 @@ img {
   height: auto;
 }
 
+h1,
+h2 {
+  font-family: $pry-font;
+  font-weight: 400;
+}
+
 .container {
   padding: 0 1rem;
+}
+
+.btn {
+  border: 1.5px solid $white;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 // HEADER SECTION
 .header {
   position: fixed;
   width: 100%;
+  z-index: 999;
   background-color: $white;
 
   .content {
@@ -77,10 +96,7 @@ img {
 // TOOGLE MENU
 .toggle-menu {
   background: url(../images/icon-hamburger.svg);
-  // @include bgStyles();
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @include bgStyles();
   height: 27px;
   width: 27px;
   cursor: pointer;
@@ -96,21 +112,27 @@ img {
   background-color: $veryDarkViolet;
   height: 100%;
   width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
 
   &__bg {
     position: absolute;
     background-image: url(../images/bg-pattern-mobile-nav.svg);
-    // @include bgStyles();
-    background-position: center;
+    background-position: bottom center;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 8rem;
+    top: -4rem;
+    left: 0;
     width: 100%;
     height: 100%;
   }
 
   &__menu {
+    display: block;
+    width: 100%;
     margin-top: 3rem;
+    z-index: 10;
     li {
       text-transform: uppercase;
       text-align: center;
@@ -120,6 +142,117 @@ img {
 
     a {
       color: $white;
+    }
+
+    .cta {
+      width: 90%;
+      padding: 0.5rem 2rem;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $black;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+// add height to nav
+.nav.showHeight {
+  max-height: 100%;
+}
+
+// add close icon
+.toggle-menu.active {
+  background: url(../images/icon-close.svg);
+  @include bgStyles();
+  height: 27px;
+  width: 27px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+// HERO SECTION
+#hero-section {
+  padding-top: 5rem;
+  width: 100%;
+
+  .content {
+    color: $veryLightGray;
+    background-color: $darkViolet;
+    display: flex;
+    @include flex(flex-start, flex-start);
+    flex-direction: column-reverse;
+  }
+
+  // hero image
+  .hero-img {
+    background: url(../images/image-intro-mobile.jpg);
+    @include bgStyles();
+    height: 100vh;
+    width: 100%;
+  }
+
+  // hero title
+  .title {
+    position: relative;
+    padding: 4rem 1rem;
+    text-align: center;
+    display: flex;
+    @include flex(center, center);
+    flex-direction: column;
+    height: 60vh;
+    z-index: 10;
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    // hero btn
+    &__btn {
+      color: $veryLightGray;
+      padding: 0.3rem 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $veryLightGray;
+        color: $black;
+      }
+    }
+
+    // background images for text section
+    .top-left--bg {
+      background: url(../images/bg-pattern-intro-left-mobile.svg);
+      @include bgStyles();
+      background-size: cover;
+      background-position: top left;
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      height: 200px;
+      width: 200px;
+    }
+
+    .bottom-right--bg {
+      background: url(../images/bg-pattern-intro-right-mobile.svg);
+      @include bgStyles();
+      background-size: contain;
+      background-position: right;
+      position: absolute;
+      bottom: -10rem;
+      right: 0;
+      height: 300px;
+      width: 300px;
+      z-index: -1;
     }
   }
 }
