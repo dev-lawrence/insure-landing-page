@@ -57,19 +57,20 @@ img {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: $pry-font;
   font-weight: 400;
-}
-
-.container {
-  padding: 0 1rem;
+  line-height: 1.1;
 }
 
 .btn {
-  border: 1.5px solid $white;
+  border: 1.5px solid $veryLightGray;
   text-transform: uppercase;
   font-weight: 700;
+  color: $veryLightGray;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 // HEADER SECTION
@@ -80,7 +81,7 @@ h2 {
   background-color: $white;
 
   .content {
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
     position: relative;
   }
 
@@ -206,7 +207,6 @@ h2 {
 
     h1 {
       font-size: 2.5rem;
-      line-height: 1.1;
       margin-bottom: 1rem;
     }
 
@@ -215,12 +215,14 @@ h2 {
       margin-bottom: 1.5rem;
     }
 
+    .text {
+      z-index: 10;
+    }
+
     // hero btn
     &__btn {
-      color: $veryLightGray;
       padding: 0.3rem 1rem;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+
       transition: background-color 0.3s ease-in-out;
 
       &:hover {
@@ -254,5 +256,78 @@ h2 {
       width: 300px;
       z-index: -1;
     }
+  }
+}
+
+// PLANS SECTION
+#plans-section {
+  h2 {
+    position: relative;
+    font-size: 2rem;
+    padding-top: 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;
+      height: 0.7px;
+      background-color: $darkGrayishViolet;
+    }
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  .content {
+    padding-top: 6rem;
+    text-align: center;
+  }
+
+  .plans {
+    margin: 3rem 1rem 6rem;
+  }
+
+  .figure {
+    margin-top: 3rem;
+  }
+
+  .caption {
+    margin-top: 1.5rem;
+
+    span {
+      font-family: $pry-font;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $darkGrayishViolet;
+    }
+  }
+}
+
+// WORK SECTION
+#work-section {
+  color: $white;
+  margin: 0 1rem;
+
+  .content {
+    position: relative;
+    background-color: $darkViolet;
+    text-align: center;
+    padding: 2rem 1rem 4rem;
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  &__bg {
+    background-image: url(../images/);
   }
 }
