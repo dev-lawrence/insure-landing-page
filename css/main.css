@@ -13,11 +13,12 @@ html {
 }
 
 body {
+  -webkit-text-size-adjust: 100%;
   font-family: "Karla", sans-serif;
   line-height: 1.6;
   width: 100%;
   height: 100%;
-  background-color: #fafafa;
+  background-color: #fff;
 }
 
 a,
@@ -42,15 +43,6 @@ h3 {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
   line-height: 1.1;
-}
-
-.btn {
-  border: 1.5px solid #fafafa;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fafafa;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
 }
 
 .header {
@@ -132,14 +124,21 @@ h3 {
 }
 
 .nav__menu .cta {
+  border: 1.5px solid #fafafa;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fafafa;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0.3rem 1rem;
+  transition: background-color 0.3s ease-in-out;
   width: 90%;
   padding: 0.5rem 2rem;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .nav__menu .cta:hover {
-  background-color: #000;
-  border-color: transparent;
+  background-color: #fafafa;
+  color: #000;
 }
 
 .nav.showHeight {
@@ -159,92 +158,95 @@ h3 {
 
 #hero-section {
   padding-top: 5rem;
+  position: relative;
+  height: 100%;
+}
+
+#hero-section .hero-bg {
+  background-image: url(../images/image-intro-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
   width: 100%;
 }
 
 #hero-section .content {
-  color: #fafafa;
   background-color: #2d2640;
-  display: flex;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column-reverse;
-}
-
-#hero-section .hero-img {
-  background: url(../images/image-intro-mobile.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-}
-
-#hero-section .title {
+  color: #fff;
   position: relative;
-  padding: 4rem 1rem;
+}
+
+#hero-section .text {
+  background-color: #2d2640;
+  min-height: 50%;
+  padding: 3rem 1rem;
   text-align: center;
-  display: flex;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 60vh;
   z-index: 10;
 }
 
-#hero-section .title h1 {
+#hero-section .text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-#hero-section .title p {
+#hero-section .text p {
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-#hero-section .title .text {
-  z-index: 10;
-}
-
-#hero-section .title__btn {
-  padding: 0.3rem 1rem;
-  transition: background-color 0.3s ease-in-out;
-}
-
-#hero-section .title__btn:hover {
-  background-color: #fafafa;
-  color: #000;
-}
-
-#hero-section .title .top-left--bg {
-  background: url(../images/bg-pattern-intro-left-mobile.svg);
+#hero-section .top-left--bg {
+  background-image: url(../images/bg-pattern-intro-left-mobile.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top left;
-  position: absolute;
-  top: 0;
-  left: -2rem;
+  background-size: contain;
   height: 200px;
   width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-#hero-section .title .bottom-right--bg {
-  background: url(../images/bg-pattern-intro-right-mobile.svg);
+#hero-section .bottom-right--bg {
+  background-image: url(../images/bg-pattern-intro-right-mobile.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
+  height: 200px;
+  width: 200px;
   position: absolute;
-  bottom: -10rem;
+  bottom: -6rem;
   right: 0;
-  height: 300px;
-  width: 300px;
   z-index: -1;
+}
+
+#hero-section .btn {
+  border: 1.5px solid #fafafa;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fafafa;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0.3rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#hero-section .btn:hover {
+  background-color: #fafafa;
+  color: #000;
+}
+
+#plans-section {
+  margin-top: 17rem;
 }
 
 #plans-section h2 {
@@ -261,7 +263,7 @@ h3 {
   transform: translateX(-50%);
   width: 20%;
   height: 0.7px;
-  background-color: #837d87;
+  background-color: #beaebf;
 }
 
 #plans-section img {
@@ -298,20 +300,426 @@ h3 {
 
 #work-section {
   color: #fff;
-  margin: 0 1rem;
 }
 
 #work-section .content {
   position: relative;
   background-color: #2d2640;
   text-align: center;
-  padding: 2rem 1rem 4rem;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 #work-section .content h3 {
   font-size: 2rem;
 }
 
-#work-section__bg {
-  background-image: url(../images/);
+#work-section .work__bg {
+  background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 300px;
+  width: 300px;
+}
+
+#work-section .text {
+  z-index: 10;
+}
+
+#work-section .text h3 {
+  margin-bottom: 1.5rem;
+}
+
+#work-section .work-btn {
+  border: 1.5px solid #fafafa;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fafafa;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0.3rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#work-section .work-btn:hover {
+  background-color: #fafafa;
+  color: #000;
+}
+
+#footer-section {
+  background-color: #fafafa;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+#footer-section .content {
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#footer-section .footer__bg {
+  background-image: url(../images/bg-pattern-footer-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+#footer-section .logo {
+  width: 95px;
+  margin-bottom: 1rem;
+}
+
+#footer-section .social-links {
+  margin-bottom: 1.5rem;
+}
+
+#footer-section .social-links li {
+  display: inline-block;
+  margin: 0 0.4rem;
+}
+
+#footer-section .social-links a {
+  color: #837d87;
+  font-size: 1.2rem;
+  transition: color 0.2s ease-in-out;
+}
+
+#footer-section .social-links a i {
+  font-weight: 500;
+}
+
+#footer-section .social-links a:hover {
+  color: #2d2640;
+}
+
+#footer-section .border-bottom {
+  border-bottom: 1.5px solid #d9d9d9;
+}
+
+#footer-section .grid {
+  margin-top: 3rem;
+}
+
+#footer-section .footer-links {
+  text-transform: uppercase;
+}
+
+#footer-section .footer-links h4 {
+  color: #837d87;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+#footer-section .footer__menu {
+  margin-bottom: 2rem;
+}
+
+#footer-section .footer__menu a {
+  color: #2d2640;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 576px;
+    margin: 0 auto;
+  }
+  .nav__bg {
+    top: 14rem;
+    height: 400px;
+    background-size: cover;
+  }
+  #hero-section .text-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #footer-section .footer__bg {
+    top: -8rem;
+  }
+}
+
+@media (max-width: 280px) {
+  #plans-section {
+    margin-top: 25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+  .header .content {
+    padding: 1rem 1rem;
+  }
+  .toggle-menu {
+    display: none;
+  }
+  .nav {
+    position: static;
+    max-height: unset;
+    background-color: transparent;
+  }
+  .nav__menu {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .nav__menu li {
+    margin-left: 1.5rem;
+    margin-bottom: 0;
+  }
+  .nav__menu a {
+    color: #837d87;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s ease-in-out;
+  }
+  .nav__menu a:hover {
+    color: #000;
+  }
+  .nav__menu .cta {
+    border: 1.5px solid #fafafa;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fafafa;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.3rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+    border: 1px solid #000;
+    color: #000;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+  .nav__menu .cta:hover {
+    background-color: #fafafa;
+    color: #000;
+  }
+  .nav__menu .cta:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  .nav__bg {
+    display: none;
+  }
+  #hero-section {
+    background-color: #2d2640;
+    height: 500px;
+  }
+  #hero-section .hero-container {
+    width: 768px;
+    margin: 0 auto;
+  }
+  #hero-section .grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    place-items: center;
+  }
+  #hero-section .hero-bg {
+    display: none;
+  }
+  #hero-section .desktop-bg {
+    background: url(../images/image-intro-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 350px;
+    grid-column: 2/-1;
+    grid-row: 1/3;
+    position: relative;
+    top: 5rem;
+  }
+  #hero-section .content {
+    background-color: unset;
+  }
+  #hero-section .text {
+    grid-row: 1/3;
+    text-align: left;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 30;
+  }
+  #hero-section .text h1 {
+    position: relative;
+  }
+  #hero-section .text h1::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    width: 20%;
+    height: 1px;
+    background-color: #beaebf;
+  }
+  #hero-section .text-content {
+    margin: 0;
+    width: 80%;
+    max-width: 768px;
+    margin-right: auto;
+  }
+  #hero-section .btn {
+    align-self: flex-start;
+  }
+  #hero-section .top-left--bg,
+  #hero-section .bottom-right--bg {
+    display: none;
+  }
+  #hero-section .top-right--bg {
+    background-image: url(../images/bg-pattern-intro-right-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+  }
+  #hero-section .bottom-left--bg {
+    background-image: url(../images/bg-pattern-intro-left-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    bottom: -10rem;
+    left: -2rem;
+    z-index: 10;
+  }
+  #plans-section {
+    margin-top: 7rem;
+  }
+  #plans-section h2 {
+    padding-top: 0;
+    padding-left: 1rem;
+  }
+  #plans-section h2::before {
+    width: 10%;
+    top: -2rem;
+    left: 1.2rem;
+    transform: unset;
+  }
+  #plans-section .plans {
+    margin-top: 0;
+  }
+  #plans-section .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  #plans-section img {
+    margin: 0;
+  }
+  #plans-section .content {
+    text-align: left;
+  }
+  #work-section .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+  #work-section .content {
+    min-height: 200px;
+  }
+  #work-section .text h3 {
+    width: 50%;
+    max-width: 500px;
+    text-align: left;
+  }
+  #work-section .work__bg {
+    background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #footer-section {
+    text-align: left;
+  }
+  #footer-section .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #footer-section .social-links {
+    margin-right: 1rem;
+  }
+  #footer-section .footer__bg {
+    background-image: url(../images/bg-pattern-footer-desktop.svg);
+    width: 400px;
+    top: 0;
+    left: -4rem;
+    height: 400px;
+  }
+  #footer-section .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  #footer-section .footer__menu a {
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 992px;
+  }
+  #hero-section .hero-container {
+    width: 992px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+  #hero-section .hero-container {
+    width: 1100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1300px;
+  }
+  #hero-section .hero-container {
+    width: 1300px;
+  }
 }

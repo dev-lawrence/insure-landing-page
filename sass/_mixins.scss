@@ -9,3 +9,19 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+@mixin btn {
+  border: 1.5px solid $veryLightGray;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $veryLightGray;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0.3rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $veryLightGray;
+    color: $black;
+  }
+}
